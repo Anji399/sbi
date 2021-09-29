@@ -18,6 +18,18 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
+  <distributionManagement>
+   <repository>
+    <id>releases</id>
+    <name>releases</name>
+    <url>http://somerepo:8081/nexus/content/repositories/releases/</url>
+   </repository>
+   <snapshotRepository>
+    <id>snapshots</id>
+    <name>snapshots</name>
+    <url>http://somerepo:8081/nexus/content/repositories/snapshots/</url>
+   </snapshotRepository>
+  </distributionManagement>
 
   <dependencies>
     <dependency>
