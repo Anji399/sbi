@@ -16,5 +16,10 @@ pipeline {
                deploy adapters: [tomcat9(credentialsId: 'tom', path: '', url: 'http://localhost:8085/')], contextPath: 'sbi', onFailure: false, war: '**/*.war' 
             }
         }
+        stage('slack') {
+            steps {
+                slackSend botUser: true, channel: '#vprofile', color: 'good', message: 'Welcome to SBI!', notifyCommitters: true, teamDomain: 'visualpath', tokenCredentialId: 'slack-token'
+            }
+        }   
     }
 }
